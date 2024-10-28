@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload an Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            width: 300px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        label:hover {
+            background-color: #0056b3;
+        }
+
+        .file-name {
+            display: block;
+            margin: 10px 0 20px;
+            color: #e0e0e0;
+            font-style: italic;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload an Image for Car Detection</h1>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <label for="file">Choose File</label>
+        <input type="file" id="file" name="file" required>
+        <span id="file-name" class="file-name">No file chosen</span>
+        <button type="submit">Upload and Predict</button>
+    </form>
+
+    <script>
+        document.getElementById('file').addEventListener('change', function() {
+            var fileName = this.files[0].name;
+            document.getElementById('file-name').textContent = fileName;
+        });
+    </script>
+</body>
+</html>

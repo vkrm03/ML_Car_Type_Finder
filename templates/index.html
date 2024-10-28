@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Car Detector and Type Finder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 60px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            display: flex;
+            gap: 60px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 900px;
+        }
+
+        .option {
+            width: 280px;
+            padding: 30px;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            color: #fff;
+        }
+
+        .option:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .option h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+
+        .option a {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1em;
+            color: #2575fc;
+            background-color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .option a:hover {
+            background-color: #2575fc;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Car Detection and Type Finder</h1>
+    <div class="container">
+        <div class="option">
+            <h2>File Upload and Prediction</h2>
+            <a href="/file_upload">Upload an Image</a>
+        </div>
+        <div class="option">
+            <h2>Live Camera Feed Prediction</h2>
+            <a href="/cam">Start Live Detection</a>
+        </div>
+    </div>
+</body>
+</html>
